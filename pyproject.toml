@@ -1,0 +1,22 @@
+[project]
+name = "khinyu-assistant-ai"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "khinyu", email = "khinyu2000@gmail.com"},
+]
+dependencies = [
+    "litestar[standard]>=2.13.0",
+    "python-dotenv>=1.0.1",
+]
+requires-python = "==3.12.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+[project.scripts]
+assistant = "khinyu_assistant_ai.__main__:main"
+
+
+[tool.pdm]
+distribution = true
+
