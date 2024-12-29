@@ -1,16 +1,6 @@
-from litestar import get, Litestar
-
-@get("/")
-async def index() -> str:
-    return "Hello, world!"
-
-
-@get("/books/{book_id:int}")
-async def get_book(book_id: int) -> dict[str, int]:
-    return {"book_id": book_id}
-
-
-app = Litestar([index, get_book])
+from litestar import Litestar
+from khinyu_assistant_ai.chat.controllers import ChatController
+app = Litestar(route_handlers=[ChatController])
 
 def main():
     """Application Entrypoint."""
